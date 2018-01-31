@@ -1,0 +1,345 @@
+configs = {
+
+	#######################################
+	# Quick Setting to display ALL errors #
+	#######################################
+
+	# Overwrites all other settings if set to yes
+	all = no
+
+	#######################################
+	# Validator Settings #
+	#######################################
+	
+	mod = "kaiserreich"
+
+	##########################################################################################################
+	# All tested CTDs ( as PDX may fix these over time, their detection can be disabled ) and other gimmicks #
+	##########################################################################################################
+	
+	ctd = {
+		# Shows if an equipment_bonus has no instant = yes going with it, as this is undesired in most cases
+		instant_yes_missing = no
+
+		# Check for swap_idea optimizations (1:1)
+		swap_idea_optimization = no
+	}
+
+	####################
+	# All Event errors #
+	####################
+
+	events = {
+	    # Shows an error if ai_chance is used when only one option is available
+        ai_chance_one_option = yes
+		
+		# Force alive-check on diplomatic_relation. This is a known CTD if the tag does not exist
+		alive_check = yes
+
+		# Show events being cross-referenced ( defining a news_event, but invoking it as country_event )
+		cross_referencing = yes
+
+		# Show event definitions that have a duplicate id
+		duplicate = yes
+
+		# Show error if trying to get event that is not defined
+		missing = yes
+
+		# Show if event definition has no desc
+		missing_desc = no
+
+		# Show if event definition has no id
+		missing_id = yes
+
+		# Show if event definition has no picture
+		missing_picture = no
+
+		# Show if event definition has no title
+		missing_title = yes
+
+		# Display an error if an event with no days is defined, as it is valid to call it using (country/news)_event = event.id instead of using brackets
+		optimization_no_days = no
+
+		# Checks if the event was defined properly. Checks if namespace is valid and the event has a real integer id
+		valid = yes
+	}
+	
+	###################
+	# All Flag errors #
+	###################
+
+	flags = {
+		country = {
+			# Flag cleared but never set
+			clr_but_never_set = yes
+
+			# Flag checked but never set
+			has_but_never_set = yes
+
+			# Flag never used at all
+			set_but_never_has = no
+		}
+
+		global = {
+			# Flag cleared but never set
+			clr_but_never_set = yes
+
+			# Flag checked but never set
+			has_but_never_set = yes
+
+			# Flag never used at all
+			set_but_never_has = no
+		}
+
+		state = {
+			# Flag cleared but never set
+			clr_but_never_set = yes
+
+			# Flag checked but never set
+			has_but_never_set = yes
+
+			# Flag never used at all
+			set_but_never_has = no
+		}
+	}
+
+	####################
+	# All Focus errors #
+	####################
+
+	focus = {
+		# If a national_focus country ID or TAG is used twice
+		duplicate = yes
+
+		# icon is not defined
+		missing_icon = yes
+
+		# id not defined
+		missing_id = yes
+
+		# tag not defined
+		missing_tag = yes
+
+		# x or y not defined
+		missing_xy = yes
+
+		# Check whether all mutually exclusive foci are on the same height and that there is no obstacle inbetween them
+		mutually_exclusive_position_check = yes
+
+		# Check if mutually_exclusive is given to all parties involved
+		mutually_exclusive_unresolved = yes
+
+		# Focus has a relative_position_id that is not defined yet.
+		# For relative_position_id to work the relative parent has to be defined before the child in the file (!)
+		relative_position_id_referenced_before_defined = yes
+
+		# Show an error if more than one focus occupies the same (x,y) position
+		xy_already_occupied = yes
+
+		# Show an error if two foci overlap ( minimum distance between two foci is 2. Error shown if it is only 1 )
+		xy_overlap = yes
+	}
+
+	##################
+	# All GFX errors #
+	##################
+
+	gfx = {
+		# Make sure case sensitivity is adhered to
+		case_sensitivity_check = yes
+
+		# GFX icon/picture reference does not exist
+		missing = no
+
+		# File does not exist on the hard drive. Checks both mod and vanilla directories
+		texturefile_missing = no
+
+		progressbartype = {
+			# No name defined
+			name_missing = yes
+
+			# No texturefile1 defined
+			texturefile1_missing = yes
+
+			# No texturefile2 defined
+			texturefile2_missing = yes
+		}
+
+		spritetype = {
+			# No name defined
+			name_missing = yes
+
+			# No texturefile defined
+			texturefile_missing = yes
+		}
+	}
+
+	####################
+	# All Ideas errors # ( not guaranteed to include everything, scripted_effects and such as not properly checked yet )
+	####################
+
+	ideas = {
+		# Trying to remove an idea that was never added
+		clr_but_never_set = yes
+
+		# Trying to has_idea an idea that was never added
+		has_but_never_set = yes
+	}
+
+	###########################
+	# All localisation errors #
+	###########################
+
+	localisation = {
+	
+        # Shows all entries that have bad colortag usage
+        color = yes
+
+		# Shows all entries that are defined more than once
+		double_usage = no
+		
+		# Shows all localisation entries that have spaces around endline characters
+		endline_spacing = yes
+		
+		# Enforces all localisation to have priority zero {NAME}:0
+		enforce_priority_zero = no
+
+		# Scripts reference a localisation id that does not exist
+		missing = yes
+
+		# Set to yes to ignore errors for missing country leader descriptions. They are optional
+		missing_ignore_country_leader_desc = yes
+
+		# Shows all syntax errors - can only disable the error display. The relevant entry will NOT be parsed, because it is missing a required part of it syntax
+		syntax = yes
+	}
+
+	###############################
+	# All opinion modifier errors #
+	###############################
+
+	opinion_modifiers = {
+
+		# shows an error if the referenced opinion_modifier was never defined
+		exists = yes
+		
+		add = {
+			# missing modifier
+			modifier = yes
+
+			# Usually valid without a target
+			target = no			
+		}
+
+		reverse_add = {
+			# missing modifier
+			modifier = yes
+
+			# missing target
+			target = yes
+		}
+	}
+
+	#####################
+	# All syntax errors #
+	#####################
+
+	syntax = {
+
+		# Shows up if the file has a broken bracket sequence somewhere
+		bracket_count = yes
+
+		# Shows entries that have an invalid usage of quotes
+		broken_quote_pair = yes
+
+		# Shows lines that end with an unfinished quote section
+		bad_line_quote_end = yes
+
+		# Shows lines that start with a quote
+		bad_line_quote_start = yes
+
+		# Shows duplicate value assignments
+		duplicate_kv = yes
+
+		# Shows entries that do not have a value assigned to them
+		empty_key_value_pair = yes
+
+		# Shows empty scope entries
+		empty_scope = no
+
+		# checks has_country/global/state_flag syntax and usage
+		has_xxx_flag = yes
+
+		# Highly Controversial Feature. Shows many false positives, but can reveal key conflicts that cause bugs
+		key_conflict = no
+
+		# Shows entries missing an equals sign
+		missing_equals_sign = yes
+
+		# Display an error when a bracket or paranthesis is detected where a curly bracket should be
+		possible_bracket_typo = yes
+
+		# Syntax redundancy checks due to implied boolean operators
+		redundant = no
+
+		# Scripted Triggers = yes assingment check. Guaranteed bug if present, they can only accept yes
+		scripted_triggers_check_assignment = yes
+
+		# Style Depth Restriction - only a single level change per row so nomore than a single curly brackets of the same direction in the same row
+		style_depth_warning = no
+
+		# Enforces capital letters for all tags of size 3 ( country tags )
+		tag_upper_case_only = yes
+	}
+
+	###############################
+	# All errors related to units #
+	###############################
+
+	units = {
+
+		# Shows any templates using divisions that were not defined
+		division_missing = yes
+
+		# Will display a list of valid division definitions that could be used instead of the wrong one listed above
+		division_missing_present_valid_choices = no
+	
+		# Division has no assigned name
+		division_name_missing = yes
+
+		# Division has no assigned division_template
+		division_template_missing = yes
+
+		# Shows load_oob calls to undefined entries
+		missing = yes
+
+		# If a load_oob call is not inside a hidden_effect
+		missing_load_oob_hidden = no
+
+		# If a load_oob call does not have a custom tooltip
+		missing_load_oob_tooltip = no
+
+		# Warning if no units loaded in a country history file
+		no_oob_for_country_file = no
+	
+		# Template has no assigned name
+		template_name_missing = yes
+
+		# Warning if no units defined in a units file
+		units_missing = no
+	}
+
+	##########################
+	# Show unused references #
+	##########################
+
+	unused = {
+		events = no
+		ideas = no
+		flags_hardcoded_KR_minister_ideas_ignore = yes
+		gfx = no
+		localisation = no
+		opinion_modifiers = no
+		units = no
+	}
+}
