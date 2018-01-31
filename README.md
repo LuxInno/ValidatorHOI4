@@ -10,5 +10,8 @@ Once you have configured the config file with your mod name and the settings tha
 # Notes
 Some of the issues listed do not directly create problems, but may be indirectly responsible for bugs. Bad formatting can eventually lead to syntax errors. Whilst other issues may lead right to crashing the game.
 
+# Credits
+A special thanks goes to the Kaiserreich development team for testing the early versions of the validator, providing ideas for features as well as feedback. A big additional thanks goes to Zankoras, the leader of the project, who has maintained the changelog.
+
 # Contact
 Please use the Issues in github to report bugs or request features.
