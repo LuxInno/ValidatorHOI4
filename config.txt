@@ -7,9 +7,9 @@ configs = {
 	# Overwrites all other settings if set to yes
 	all = no
 
-	#######################################
+	######################
 	# Validator Settings #
-	#######################################
+	######################
 	
 	mod = "kaiserreich"
 

@@ -1,3 +1,7 @@
+Changelog:
+
+# First Public Release
+
 # Version 0.71
 Added checking for missing shine effects
 
