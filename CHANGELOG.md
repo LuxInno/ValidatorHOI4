@@ -1,5 +1,8 @@
 Changelog:
 
+# Version 0.72
+Fixed false positive caused by leaders added via IF statements
+
 # First Public Release
 
 # Version 0.71
