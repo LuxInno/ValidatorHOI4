@@ -20,9 +20,6 @@ configs = {
 	ctd = {
 		# Shows if an equipment_bonus has no instant = yes going with it, as this is undesired in most cases
 		instant_yes_missing = no
-
-		# Check for swap_idea optimizations (1:1)
-		swap_idea_optimization = no
 	}
 
 	####################
@@ -30,14 +27,20 @@ configs = {
 	####################
 
 	events = {
-	    # Shows an error if ai_chance is used when only one option is available
-        ai_chance_one_option = yes
+		# Shows an error if ai_chance is used when only one option is available
+		ai_chance_one_option = yes
 		
 		# Force alive-check on diplomatic_relation. This is a known CTD if the tag does not exist
 		alive_check = yes
 
 		# Show events being cross-referenced ( defining a news_event, but invoking it as country_event )
 		cross_referencing = yes
+
+		# Shows definition problems with the desc field of events
+		definition_desc = yes
+
+		# Shows definition problems with the title field of events
+		definition_title = yes
 
 		# Show event definitions that have a duplicate id
 		duplicate = yes
@@ -62,6 +65,18 @@ configs = {
 
 		# Checks if the event was defined properly. Checks if namespace is valid and the event has a real integer id
 		valid = yes
+
+		options = {
+
+			# Displays an error if an event opion has no name in a visible event
+			missing_name = yes
+
+			# Enforces a naming convention where .d is used for the event description and .t for the event text in localisation and therefore displays an error if they are used as EventOptions
+			naming_convention = yes
+
+			# Displays an error if an event option has a name in a hidden event
+			redundant_name = yes
+		}
 	}
 	
 	###################
@@ -69,6 +84,10 @@ configs = {
 	###################
 
 	flags = {
+		
+		# Shows all errors when flags are not being used properly
+		usage_error = yes
+
 		country = {
 			# Flag cleared but never set
 			clr_but_never_set = yes
@@ -108,6 +127,7 @@ configs = {
 	####################
 
 	focus = {
+
 		# If a national_focus country ID or TAG is used twice
 		duplicate = yes
 
@@ -145,6 +165,7 @@ configs = {
 	##################
 
 	gfx = {
+
 		# Make sure case sensitivity is adhered to
 		case_sensitivity_check = yes
 
@@ -179,11 +200,18 @@ configs = {
 	####################
 
 	ideas = {
+
+		# Check if an idea was defined already
+		already = yes
+
 		# Trying to remove an idea that was never added
 		clr_but_never_set = yes
 
 		# Trying to has_idea an idea that was never added
 		has_but_never_set = yes
+
+		# Check for swap_idea optimizations (1:1)
+		swap_idea_optimization = no
 	}
 
 	###########################
@@ -191,9 +219,9 @@ configs = {
 	###########################
 
 	localisation = {
-	
-        # Shows all entries that have bad colortag usage
-        color = yes
+
+		# Shows all entries that have bad colortag usage
+		color = yes
 
 		# Shows all entries that are defined more than once
 		double_usage = no
@@ -309,6 +337,9 @@ configs = {
 
 		# Division has no assigned division_template
 		division_template_missing = yes
+
+		# Unit Leader used that does not exist
+		leader_missing = yes
 
 		# Shows load_oob calls to undefined entries
 		missing = yes
